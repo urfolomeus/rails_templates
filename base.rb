@@ -1,3 +1,5 @@
+GITHUB_ROOT = "http://github.com/urfolomeus/rails_templates/raw/master/"
+
 uses_ra = false
 uses_cuke = false
 
@@ -5,14 +7,14 @@ uses_cuke = false
 
 if yes?("Use restful-authentication? [y/n]")
   uses_ra = true
-  load_template File.join(File.dirname(__FILE__), "tpl_rest_auth.rb")
+  load_template GIT_HUB_ROOT + "ra.rb"
 end
 
 ## install cucumber and rspec
 
 if yes?("Use cucumber and rspec? [y/n]")
   uses_cuke = true
-  load_template File.join(File.dirname(__FILE__), "tpl_cuke_rspec.rb")
+  load_template GIT_HUB_ROOT + "cuke_rspec.rb"
 end
 
 ## unpack gems
@@ -35,7 +37,7 @@ if uses_ra and yes?("Create test user? [y/n]")
 end
 
 ## Files
-load_template File.join(File.dirname(__FILE__), "tpl_files.rb")
+load_template GIT_HUB_ROOT + "files.rb"
 
 ## Commands
 
@@ -47,5 +49,5 @@ run "rm -rf test" if use_cuke?
 run "curl -L http://code.jquery.com/jquery-1.4.min.js > public/javascripts/jquery-1.4.min.js"
 
 if yes?("Use git? [y/n]")
-  load_template File.join(File.dirname(__FILE__), "tpl_git.rb")
+  load_template GIT_HUB_ROOT + "git.rb"
 end
