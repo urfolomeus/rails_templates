@@ -28,7 +28,10 @@ rake("db:test:prepare")
 if uses_ra and yes?("Create test user? [y/n]")
   name = ask("What would like to call the user?")
   file 'db/seeds.rb',
-  %Q{User.create!(:login => "#{name}", :email => "#{name}@example.com", :password => "pass", :password_confirmation => "pass")}
+  %Q{User.create!(:login => "#{name}", 
+                  :email => "#{name}@example.com", 
+                  :password => "123456", 
+                  :password_confirmation => "123456")}
   rake "db:seed"
 end
 
