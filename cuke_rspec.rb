@@ -6,16 +6,18 @@
 
 # Gems need to be installed here because of a cucumber dependency that
 # "rake gems:install" doesn't handle correctly.
-gems_to_install = ['cucumber',
-  'cucumber-rails',
-  'nokogiri',
-  'webrat',
-  'rspec',
-  'rspec-rails',
-  'haml',
-  'database_cleaner']
-use_sudo = "sudo"
-run "#{use_sudo} gem install #{gems_to_install.join(' ')}", :sudo => use_sudo
+if yes?("Install gems? [y/n]")
+  gems_to_install = ['cucumber',
+    'cucumber-rails',
+    'nokogiri',
+    'webrat',
+    'rspec',
+    'rspec-rails',
+    'haml',
+    'database_cleaner']
+  use_sudo = "sudo"
+  run "#{use_sudo} gem install #{gems_to_install.join(' ')}", :sudo => use_sudo
+end
 
 ## Gems
 
