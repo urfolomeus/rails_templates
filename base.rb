@@ -37,7 +37,7 @@ if uses_ra and yes?("Create test user? [y/n]")
 end
 
 ## Files
-load_template GIT_HUB_ROOT + "files.rb"
+load_template "http://github.com/urfolomeus/rails_templates/raw/master/files.rb"
 
 ## Commands
 
