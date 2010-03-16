@@ -8,6 +8,10 @@ if yes?("Use restful-authentication? [y/n]")
   load_template "http://github.com/urfolomeus/rails_templates/raw/master/ra.rb"
 end
 
+if yes?("Use authlogic? [y/n]")
+  load_template "http://github.com/urfolomeus/rails_templates/raw/master/authlogic.rb"
+end
+
 ## install cucumber and rspec
 
 if yes?("Use cucumber and rspec? [y/n]")
