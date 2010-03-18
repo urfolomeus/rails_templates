@@ -1,7 +1,6 @@
-if yes?("Install gems? [y/n]")
-  gems_to_install = ['authlogic', 'nifty-generators']
-  run "sudo gem install #{gems_to_install.join(' ')}", :sudo => true
+if yes?("Install gem? [y/n]")
+  gem authlogic
+  rake "gems:install"
 end
 
-generate "nifty_layouts"
-generate "nifty_authentication"
+generate nifty_scaffold user username:string email:string password:string new edit

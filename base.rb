@@ -1,6 +1,11 @@
 uses_al = false
 uses_cuke = false
 
+## generators
+if yes?("Install nifty generators gem? [y/n]")
+  run "sudo gem install nifty-generators", :sudo => true
+end
+
 ## authentication
 
 if yes?("Use authlogic? [y/n]")
