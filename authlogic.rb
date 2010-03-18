@@ -1,7 +1,4 @@
-if yes?("Install gem? [y/n]")
-  gem authlogic
-  rake "gems:install"
-end
+gem 'authlogic', :lib => false, :source => "http://gemcutter.org"
 
 user_fields = [ "username:string", 
                 "email:string", 

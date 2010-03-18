@@ -4,20 +4,6 @@
 # Created: January 20, 2010
 # License: MIT
 
-# Gems need to be installed here because of a cucumber dependency that
-# "rake gems:install" doesn't handle correctly.
-if yes?("Install gems? [y/n]")
-  gems_to_install = ['cucumber',
-    'cucumber-rails',
-    'nokogiri',
-    'webrat',
-    'rspec',
-    'rspec-rails',
-    'haml',
-    'database_cleaner']
-  run "sudo gem install #{gems_to_install.join(' ')}", :sudo => true
-end
-
 ## Gems
 
 gem 'rspec', :lib => false, :env => "test", :source => "http://gemcutter.org"
@@ -32,18 +18,3 @@ gem 'webrat', :lib => false, :env => "cucumber", :source => "http://gemcutter.or
 
 generate("rspec")
 generate("cucumber", "--force", "--webrat", "--rspec")
-
-## Commands
-
-#inside("features") do
-#  run "rm *.feature"
-#  run "rm step_definitions/ra_*.rb"
-#  run "rm step_definitions/rest_auth*.rb"
-#  run "rm step_definitions/user_steps.rb"
-#end
-#
-#inside("spec/controllers") do
-#  run "rm access_control_spec.rb"
-#  run "rm users_controller_spec.rb"
-#  run "rm sessions_controller_spec.rb"
-#end

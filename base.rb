@@ -1,15 +1,27 @@
-uses_al = false
 uses_cuke = false
 
-## generators
-if yes?("Install nifty generators gem? [y/n]")
-  run "sudo gem install nifty-generators", :sudo => true
+## gems
+if yes?("Install gems? [y/n]")
+  if yes?("Install gems? [y/n]")
+    gems_to_install = [
+      'cucumber',
+      'cucumber-rails',
+      'nokogiri',
+      'webrat',
+      'rspec',
+      'rspec-rails',
+      'haml',
+      'database_cleaner',
+      'nifty-generators',
+      'authlogic'
+    ]
+    run "sudo gem install #{gems_to_install.join(' ')}", :sudo => true
+  end
 end
 
 ## authentication
 
 if yes?("Use authlogic? [y/n]")
-  uses_al = true
   load_template "http://github.com/urfolomeus/rails_templates/raw/master/authlogic.rb"
 end
 
@@ -27,18 +39,6 @@ rake("gems:unpack", :env => "cucumber") if uses_cuke
 rake("rails:freeze:gems")
 rake("db:migrate")
 rake("db:test:prepare")
-
-## Create test user
-
-#if uses_ra and yes?("Create test user? [y/n]")
-#  name = ask("What would like to call the user?")
-#  file 'db/seeds.rb',
-#  %Q{User.create!(:login => "#{name}", 
-#                  :email => "#{name}@example.com", 
-#                  :password => "123456", 
-#                  :password_confirmation => "123456")}
-#  rake "db:seed"
-#end
 
 ## Files
 load_template "http://github.com/urfolomeus/rails_templates/raw/master/files.rb"
