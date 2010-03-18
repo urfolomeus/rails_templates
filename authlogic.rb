@@ -10,7 +10,7 @@ user_fields = [ "username:string",
                 "persistence_token:string"]
 user_controller_actions = ["new", "edit"]
 
-generate "nifty_scaffold user #{user_fields.join(' ')} #{user_controller_actions.join('')}"
+generate "nifty_scaffold user #{user_fields.join(' ')} #{user_controller_actions.join(' ')}"
 
 file 'app/models/user.rb', 
 %q{class User < ActiveRecord::Base
