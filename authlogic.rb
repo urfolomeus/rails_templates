@@ -7,21 +7,19 @@ user_fields = [ "username:string",
                 "email:string", 
                 "crypted_password:string",
                 "password_salt:string",
-                "persistence_token"]
+                "persistence_token:string"]
 user_controller_actions = ["new", "edit"]
 
 generate "nifty_scaffold user #{user_fields.join('')} #{user_controller_actions.join('')}"
 
 file 'app/models/user.rb', 
-%q{
-class User < ActiveRecord::Base
+%q{class User < ActiveRecord::Base
   acts_as_authentic
 end
 }
 
 file 'app/views/users/_form.html.erb', 
-%q{
-<% form_for @user do |f| %>
+%q{<% form_for @user do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :username %><br />
