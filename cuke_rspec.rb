@@ -15,8 +15,7 @@ if yes?("Install gems? [y/n]")
     'rspec-rails',
     'haml',
     'database_cleaner']
-  use_sudo = "sudo"
-  run "#{use_sudo} gem install #{gems_to_install.join(' ')}", :sudo => use_sudo
+  run "sudo gem install #{gems_to_install.join(' ')}", :sudo => true
 end
 
 ## Gems
