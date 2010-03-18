@@ -3,4 +3,4 @@ if yes?("Install gem? [y/n]")
   rake "gems:install"
 end
 
-generate nifty_scaffold user username:string email:string password:string new edit
+generate "nifty_scaffold user username:string email:string password:string new edit"
