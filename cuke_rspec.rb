@@ -36,15 +36,15 @@ generate("cucumber", "--force", "--webrat", "--rspec")
 
 ## Commands
 
-inside("features") do
-  run "rm *.feature"
-  run "rm step_definitions/ra_*.rb"
-  run "rm step_definitions/rest_auth*.rb"
-  run "rm step_definitions/user_steps.rb"
-end
-
-inside("spec/controllers") do
-  run "rm access_control_spec.rb"
-  run "rm users_controller_spec.rb"
-  run "rm sessions_controller_spec.rb"
-end
+#inside("features") do
+#  run "rm *.feature"
+#  run "rm step_definitions/ra_*.rb"
+#  run "rm step_definitions/rest_auth*.rb"
+#  run "rm step_definitions/user_steps.rb"
+#end
+#
+#inside("spec/controllers") do
+#  run "rm access_control_spec.rb"
+#  run "rm users_controller_spec.rb"
+#  run "rm sessions_controller_spec.rb"
+#end

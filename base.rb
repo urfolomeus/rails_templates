@@ -1,14 +1,10 @@
-uses_ra = false
+uses_al = false
 uses_cuke = false
 
-## install restful_authentication
-
-if yes?("Use restful-authentication? [y/n]")
-  uses_ra = true
-  load_template "http://github.com/urfolomeus/rails_templates/raw/master/ra.rb"
-end
+## authentication
 
 if yes?("Use authlogic? [y/n]")
+  uses_al = true
   load_template "http://github.com/urfolomeus/rails_templates/raw/master/authlogic.rb"
 end
 
@@ -29,15 +25,15 @@ rake("db:test:prepare")
 
 ## Create test user
 
-if uses_ra and yes?("Create test user? [y/n]")
-  name = ask("What would like to call the user?")
-  file 'db/seeds.rb',
-  %Q{User.create!(:login => "#{name}", 
-                  :email => "#{name}@example.com", 
-                  :password => "123456", 
-                  :password_confirmation => "123456")}
-  rake "db:seed"
-end
+#if uses_ra and yes?("Create test user? [y/n]")
+#  name = ask("What would like to call the user?")
+#  file 'db/seeds.rb',
+#  %Q{User.create!(:login => "#{name}", 
+#                  :email => "#{name}@example.com", 
+#                  :password => "123456", 
+#                  :password_confirmation => "123456")}
+#  rake "db:seed"
+#end
 
 ## Files
 load_template "http://github.com/urfolomeus/rails_templates/raw/master/files.rb"
