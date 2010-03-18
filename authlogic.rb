@@ -31,7 +31,11 @@ file 'app/views/users/_form.html.erb',
   </p>
   <p>
     <%= f.label :password %><br />
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </p>
   <p><%= f.submit "Submit" %></p>
 <% end %>
