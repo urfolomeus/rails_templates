@@ -1,3 +1,4 @@
+app_name = @root.split('/').last
 uses_cuke = false
 
 ## gems
@@ -51,6 +52,10 @@ run "rm -rf test" if uses_cuke
 
 # jQuery
 run "curl -L http://code.jquery.com/jquery-1.4.min.js > public/javascripts/jquery-1.4.min.js"
+
+if yes?("Use HAML? [y/n]")
+  run "haml --rails #{app_name}"
+end
 
 if yes?("Use git? [y/n]")
   load_template "http://github.com/urfolomeus/rails_templates/raw/master/git.rb"
