@@ -57,6 +57,11 @@ if yes?("Use HAML? [y/n]")
   run "haml --rails #{app_name}"
 end
 
+if yes?("Use RStakeout? [y/n]")
+  run "cp ./rstakeout #{@root}/script/rstakeout"
+  run "chmod +x #{@root}/script/rstakeout"
+end
+
 if yes?("Use git? [y/n]")
   load_template "http://github.com/urfolomeus/rails_templates/raw/master/git.rb"
 end
