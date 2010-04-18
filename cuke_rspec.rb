@@ -11,7 +11,7 @@ gem 'rspec-rails', :lib => false, :env => "test", :source => "http://gemcutter.o
 
 gem 'cucumber', :lib => false, :env => "cucumber", :source => "http://gemcutter.org"
 gem 'cucumber-rails', :lib => false, :env => "cucumber", :source => "http://gemcutter.org"
-gem 'database-cleaner', :lib => false, :env => "cucumber", :source => "http://gemcutter.org"
+gem 'database_cleaner', :lib => false, :env => "cucumber", :source => "http://gemcutter.org"
 gem 'webrat', :lib => false, :env => "cucumber", :source => "http://gemcutter.org"
 
 ## Generators
