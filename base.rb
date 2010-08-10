@@ -17,7 +17,7 @@ if yes?("Install gems? [y/n]")
       'authlogic',
       'tiny_mce'
     ]
-    run "sudo gem install #{gems_to_install.join(' ')}", :sudo => true
+    run "gem install #{gems_to_install.join(' ')}", :sudo => true
   end
 end
 
