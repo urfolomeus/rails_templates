@@ -3,22 +3,20 @@ uses_cuke = false
 
 ## gems
 if yes?("Install gems? [y/n]")
-  if yes?("Install gems? [y/n]")
-    gems_to_install = [
-      'cucumber',
-      'cucumber-rails',
-      'nokogiri',
-      'webrat',
-      'rspec',
-      'rspec-rails',
-      'haml',
-      'database_cleaner',
-      'nifty-generators',
-      'authlogic',
-      'tiny_mce'
-    ]
-    run "gem install #{gems_to_install.join(' ')}", :sudo => true
-  end
+  gems_to_install = [
+    'cucumber',
+    'cucumber-rails',
+    'nokogiri',
+    'webrat',
+    'rspec',
+    'rspec-rails',
+    'haml',
+    'database_cleaner',
+    'nifty-generators',
+    'authlogic',
+    'tiny_mce'
+  ]
+  run "gem install #{gems_to_install.join(' ')}", :sudo => true
 end
 
 ## authentication
