@@ -14,7 +14,8 @@ if yes?("Install gems? [y/n]")
       'haml',
       'database_cleaner',
       'nifty-generators',
-      'authlogic'
+      'authlogic',
+      'tiny_mce'
     ]
     run "sudo gem install #{gems_to_install.join(' ')}", :sudo => true
   end
@@ -55,6 +56,10 @@ run "curl -L http://code.jquery.com/jquery-1.4.min.js > public/javascripts/jquer
 
 if yes?("Use HAML? [y/n]")
   run "haml --rails #{app_name}"
+end
+
+if yes?("Use TinyMCE? [y/n]")
+  gem 'tiny_mce', :lib => false
 end
 
 if yes?("Use RStakeout? [y/n]")
